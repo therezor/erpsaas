@@ -119,7 +119,6 @@ class Invoice extends Page
     public function form(Form $form): Form
     {
         return $form
-            ->live()
             ->schema([
                 $this->getGeneralSection(),
                 $this->getContentSection(),
@@ -208,6 +207,7 @@ class Invoice extends Page
                         Checkbox::make('show_logo')
                             ->label('Show Logo'),
                         ColorPicker::make('accent_color')
+                            ->lazy()
                             ->label('Accent Color'),
                         Select::make('font')
                             ->label('Font')
